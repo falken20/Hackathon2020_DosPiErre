@@ -1,2 +1,12 @@
 django>=2.1.2
+
+# Postgresql
+psycopg2==2.8.5
+
+
+
+# MongoDB
 djongo==1.2.30
+django-nonrel-enuff
+djangotoolbox
+mongoengine

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'english_dic/css/style.css' %}"> -->
+
+<div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for element in users %}
+
+            <tr style="font-size:smaller;">
+                <td> {{ element.user }} </td>
+                <td> {{ element.name }} </td>
+                <td> {{ element.surname }} </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock content %}

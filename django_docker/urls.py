@@ -1,4 +1,4 @@
-"""django_mongodb_docker URL Configuration
+"""django_docker URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from docker_app import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.default_view),
+    path('users/', views.users_view)
 ]
