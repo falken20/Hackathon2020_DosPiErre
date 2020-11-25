@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8738c62b-a3fd-4a12-aaf8-2ca8a3815b2e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/docker_app/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_docker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_docker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0002_boyitem_password.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0003_auto_20201125_1358.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

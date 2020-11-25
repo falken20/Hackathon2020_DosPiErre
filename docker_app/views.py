@@ -7,7 +7,7 @@ import logging
 from django.shortcuts import render
 from django.utils.timezone import now
 
-from .models import BoyItem, CompanyItem
+from .models import UserItem, CompanyItem
 
 
 def default_view(request):
