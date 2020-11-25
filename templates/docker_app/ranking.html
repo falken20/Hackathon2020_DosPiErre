@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
+
+<div>
+    <h1>Ranking</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for element in users %}
+
+            <tr style="font-size:smaller;">
+                <td> {{ element.user }} </td>
+                <td> {{ element.name }} </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock content %}

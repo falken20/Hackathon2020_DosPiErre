@@ -21,5 +21,8 @@ from docker_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.default_view),
-    path('users/', views.users_view)
+    path('users/', views.users_view),
+    path('ranking/', views.ranking_view),
+    path('mapa/', views.mapa_view),
+    path('ofertas/', views.ofertas_view),
 ]
