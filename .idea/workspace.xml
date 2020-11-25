@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8738c62b-a3fd-4a12-aaf8-2ca8a3815b2e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/docker_app/mapa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/docker_app/ofertas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/docker_app/ranking.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_docker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_docker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0002_boyitem_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_app/migrations/0003_auto_20201125_1358.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_docker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_docker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/docker_app/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/default.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +32,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/docker_app" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/docker_app" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -47,9 +55,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1398" y="359" key="SettingsEditor" timestamp="1606305271326">
+    <state x="1398" y="359" key="SettingsEditor" timestamp="1606337666753">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1398" y="359" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1606305271326" />
+    <state x="1398" y="359" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1606337666753" />
   </component>
 </project>
