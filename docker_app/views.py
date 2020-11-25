@@ -19,7 +19,7 @@ def default_view(request):
 
 def users_view(request):
 
-    queryset = BoyItem.objects.all()
+    queryset = UserItem.objects.all()
     template_name = 'docker_app/users.html'
 
     return render(request, template_name, {'users': queryset})
