@@ -74,10 +74,11 @@ class PromotionItem(models.Model):
         ('D', 'Discount'),
         ('M', 'Merchandising'),
         ('T', 'Free tickets'),
+        ('R', 'Regalo'),
     )
     id_promotion = models.CharField(max_length=10, primary_key=True)
     type = models.CharField(max_length=1, choices=PROMOTION_TYPE)
-    desc_promotion = models.TextField(60)
+    desc_promotion = models.TextField(max_length=60)
     id_company = models.ForeignKey(CompanyItem, on_delete=models.PROTECT)
     reto = models.ForeignKey(RetoItem, on_delete=models.PROTECT)
 
