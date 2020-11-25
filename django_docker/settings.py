@@ -83,11 +83,11 @@ mongoengine.connect(db='db_name', host=MONGODB_HOST,
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgresql',
+        'NAME': 'sampledb',
         'USER': os.getenv('POSTGRESQL_USER'),
         'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT', 5432)
+        'HOST': os.getenv('POSTGRESQL_HOST'),
+        'PORT': os.getenv('POSTGRESQL_PORT', 5432)
     }
 }
 
