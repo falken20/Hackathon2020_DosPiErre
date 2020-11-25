@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8738c62b-a3fd-4a12-aaf8-2ca8a3815b2e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/docker_app/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
