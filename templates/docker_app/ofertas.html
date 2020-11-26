@@ -5,9 +5,9 @@
 {% load static %}
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
 
-<div class="col-12">
+<div class="content-wrapper col-12">
     <h1>Promociones</h1>
-
+    <div class="layout horizontal wrap">
     {% for element in ofertas %}
 
         <div class="card" style="width: 18rem; margin-bottom:10px">
@@ -20,6 +20,8 @@
         </div>
 
     {% endfor %}
+
+    </div>
 
 </div>
 
