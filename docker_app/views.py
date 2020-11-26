@@ -79,6 +79,39 @@ def generate_map(location):
                       f'Arguments:\n {err.args}')
 
 
+def generate_map_q(queryset):
+    try:
+        print(f'Creando mapa para coordenadas')
+        location_ini = [queryset[0].company.latitude, queryset[0].company.longitude]
+        heat_map = folium.Map(location=location_ini,
+                              zoom_start='16')
+
+        # HeatMap(location, radius=16).add_to(heat_map)
+        for row in queryset:
+            html_card = f'<div class="card" style="width: 18rem;">' \
+                        f'<img src="{row.company.logo_url}" class="card-img-top" ' \
+                        f'style="max-height:100px; width: auto;>' \
+                        f'<div class="card-body">' \
+                        f'<h5 class="card-title">{row.company}</h5>' \
+                        f'<p class="card-text">{row.desc_promotion}</p>' \
+                        f'<a href="/reto/{row.reto.id_reto}" class="btn btn-primary">Acepta el reto!!</a>' \
+                        f' </div>' \
+                        f'</div>'
+            folium.Marker([row.company.latitude, row.company.longitude],
+                          popup=html_card,
+                          tooltip='Click me').add_to(heat_map)
+
+        heat_map.save(f'{PATH_MAP}mapa2.html')
+
+        print('Heat map successfully generated in html')
+
+    except Exception as err:
+        logging.error(f'\nLine: {err.__traceback__.tb_lineno} \n'
+                      f'File: {err.__traceback__.tb_frame.f_code.co_filename} \n'
+                      f'Type Error: {type(err).__name__} \n'
+                      f'Arguments:\n {err.args}')
+
+
 def mapa_view(request):
     queryset = PromotionItem.objects.all()
 
@@ -89,7 +122,7 @@ def mapa_view(request):
         else:
             location.append([row.company.latitude, row.company.longitude])
 
-    generate_map(location)
+    generate_map_q(queryset)
 
     template_name = 'docker_app/mapa2.html'
 
