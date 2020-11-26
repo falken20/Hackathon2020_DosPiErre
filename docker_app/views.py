@@ -1,3 +1,4 @@
+import base64
 from django.shortcuts import render
 import folium
 from folium.plugins import HeatMap
@@ -128,5 +129,9 @@ def result_view(request):
 
 def deeplinking_view(request, user='Richi'):
     template_name = 'docker_app/result.html'
+
+    print(base64.b64decode(user))
+
+    request.session['user_name'] = base64.b64decode(user).decode()
 
     return redirect(default_view)

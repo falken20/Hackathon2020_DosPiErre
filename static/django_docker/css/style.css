@@ -458,6 +458,34 @@ body.fullbleed {
   background-color: var(--bbva-navy)!important;
 }
 
+.title-wrapper{
+  padding-right: 20px;
+}
+
+
+.user-name{
+  color: var(--bbva-white);
+  display: none;
+}
+.user-name-mobile{
+  color: var(--bbva-white);
+}
+
+@media only screen and (max-width: 992px) {
+  .user-name-mobile{
+    color: var(--bbva-white);
+    display:none;
+  }
+  .user-name{
+    color: var(--bbva-white);
+    display:block;
+  }
+  .title-wrapper{
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+}
 
 body {
 	padding-top: 60px; /* Relleno superior igual a la altura de la cabecera*/
