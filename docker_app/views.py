@@ -62,7 +62,7 @@ def generate_map(queryset):
         print(f'Creando mapa para coordenadas')
         location_ini = [queryset[0].company.latitude, queryset[0].company.longitude]
         heat_map = folium.Map(location=location_ini,
-                              zoom_start='16')
+                              zoom_start='17')
 
         # HeatMap(location, radius=16).add_to(heat_map)
         for row in queryset:
