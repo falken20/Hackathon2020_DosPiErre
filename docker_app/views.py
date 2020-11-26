@@ -124,6 +124,6 @@ def mapa_view(request):
 
     generate_map_q(queryset)
 
-    template_name = 'docker_app/mapa2.html'
+    template_name = 'docker_app/mapa.html'
 
     return render(request, template_name, {'users': queryset})
