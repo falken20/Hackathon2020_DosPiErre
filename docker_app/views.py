@@ -6,7 +6,7 @@ from folium.plugins import HeatMap
 
 import os
 import logging
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils.timezone import now
 
 from .models import UserItem, CompanyItem, PromotionItem, RetoItem, QuestionItem, AnswerItem, TopicItem
@@ -103,3 +103,9 @@ def result_view(request):
     template_name = 'docker_app/result.html'
 
     return render(request, template_name)
+
+
+def deeplinking_view(request, user='Richi'):
+    template_name = 'docker_app/result.html'
+
+    return redirect(default_view)
