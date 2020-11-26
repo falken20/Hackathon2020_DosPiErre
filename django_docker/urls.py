@@ -26,5 +26,6 @@ urlpatterns = [
     path('mapa/', views.mapa_view),
     path('ofertas/', views.ofertas_view),
     path('reto/<str:id_reto>/', views.reto_view),
+    path('result/', views.result_view),
 
 ]

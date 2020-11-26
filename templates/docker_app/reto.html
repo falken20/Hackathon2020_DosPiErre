@@ -15,9 +15,9 @@
         <h5 class="card-title">{{ element.desc_reto }}</h5>
         <p class="card-text">
           <ul>
-            <li>Puntos Todo Ok: {{ element.points_1 }}</li>
-            <li>Puntos 1 fallo: {{ element.points_2 }}</li>
-            <li>Puntos 2 fallo: {{ element.points_3 }}</li>
+            <li style="list-style-type: none;">Puntos Todo Ok: {{ element.points_1 }}</li>
+            <li style="list-style-type: none;">Puntos 1 fallo: {{ element.points_2 }}</li>
+            <li style="list-style-type: none;">Puntos 2 fallo: {{ element.points_3 }}</li>
           </ul> 
         </p>
       </div>
@@ -40,8 +40,8 @@
 
      {% endfor %}
    {% endfor %}
-<div class="mt-5">  
-  <button type="button" class="w-30 btn btn-success btn-lg btn-block">Validar</button>
+<div class="mt-5">
+    <a class="btn btn-success btn-lg btn-block" href="/result" role="button">Validar</a>
 </div>
 
 
