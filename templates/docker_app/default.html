@@ -8,8 +8,21 @@
 <!-- Rotating card -->
 <div>
 
-    <img src="{% static 'django_docker/img/logo.png' %}" class="card-img" alt="DosPiErre"
-         style="max-height:400px; width: auto; margin:0 auto;">
+    <h1>Temática próximos desafios</h1>
+
+<div class="row">
+  {% for element in topics %}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ element.title_topic }}</h5>
+        <p class="card-text">{{ element.desc_topic }}</p>
+        <a href="{{ element.url_topic }}" class="btn btn-primary" target="_blank">Más info</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
 </div>
 <!-- Rotating card -->

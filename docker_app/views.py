@@ -7,14 +7,15 @@ import logging
 from django.shortcuts import render
 from django.utils.timezone import now
 
-from .models import UserItem, CompanyItem, PromotionItem, RetoItem, QuestionItem, AnswerItem
+from .models import UserItem, CompanyItem, PromotionItem, RetoItem, QuestionItem, AnswerItem, TopicItem
 
 
 def default_view(request):
 
+    queryset = TopicItem.objects.all().order_by('-date')
     template_name = 'docker_app/default.html'
 
-    return render(request, template_name)
+    return render(request, template_name, {'topics': queryset})
 
 
 def users_view(request):

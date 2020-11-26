@@ -1,5 +1,6 @@
 from django.db import models
 import requests
+from django.utils.timezone import now
 
 # Create your models here.
 API_KEY = ''
@@ -127,3 +128,13 @@ class PromotionItem(models.Model):
     def __str__(self):
         return f'{self.desc_promotion}, Company: {self.company} Tipo: {self.type}'
 
+
+class TopicItem(models.Model):
+    """ Class para almacenar proximos temas de desafios"""
+    title_topic = models.CharField(max_length=100)
+    desc_topic = models.TextField(max_length=300)
+    url_topic = models.CharField(max_length=200, blank=True)
+    date = models.DateField(default=now)
+
+    def __str__(self):
+        return f'{self.title_topic}'
