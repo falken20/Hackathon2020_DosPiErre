@@ -27,17 +27,17 @@ class UserItem(models.Model):
     def save(self, **kwargs):
         geo_address = " ".join([self.address, str(self.zip_code), self.city])
         api_key = API_KEY
-        api_response = \
-            requests.get(f'https://maps.googleapis.com/maps/api/geocode/json?address="{geo_address}"&key={api_key}')
+        url_api = f'https://nominatim.openstreetmap.org/search.php?q={geo_address}&polygon_geojson=1&format=jsonv2'
+        api_response = requests.get(url_api)
         api_response_dict = api_response.json()
-        print(api_response_dict)
 
-        if api_response_dict['status'] == 'OK':
-            self.latitude = api_response_dict['results'][0]['geometry']['location']['lat']
-            self.longitude = api_response_dict['results'][0]['geometry']['location']['lng']
-            self.save()
+        if api_response.status_code == 200 and api_response_dict != []:
+            print(url_api, '\n', api_response_dict[0]['lat'])
+            self.latitude = api_response_dict[0]['lat']
+            self.longitude = api_response_dict[0]['lon']
 
         super().save(**kwargs)
+
 
 
 class CompanyItem(models.Model):
@@ -65,15 +65,14 @@ class CompanyItem(models.Model):
     def save(self, **kwargs):
         geo_address = " ".join([self.address, str(self.zip_code), self.city])
         api_key = API_KEY
-        api_response = \
-            requests.get(f'https://maps.googleapis.com/maps/api/geocode/json?address="{geo_address}"&key={api_key}')
+        url_api = f'https://nominatim.openstreetmap.org/search.php?q={geo_address}&polygon_geojson=1&format=jsonv2'
+        api_response = requests.get(url_api)
         api_response_dict = api_response.json()
-        print(api_response_dict)
 
-        if api_response_dict['status'] == 'OK':
-            self.latitude = api_response_dict['results'][0]['geometry']['location']['lat']
-            self.longitude = api_response_dict['results'][0]['geometry']['location']['lng']
-            self.save()
+        if api_response.status_code == 200 and api_response_dict != []:
+            print(url_api, '\n', api_response_dict[0]['lat'])
+            self.latitude = api_response_dict[0]['lat']
+            self.longitude = api_response_dict[0]['lon']
 
         super().save(**kwargs)
 

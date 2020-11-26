@@ -53,10 +53,15 @@ def ofertas_view(request):
 def reto_view(request, id_reto='R001'):
 
     queryset = RetoItem.objects.filter(id_reto=id_reto)
-    # q2 = QuestionItem.objects.filter(id_reto=id_reto)
-    for row in queryset:
-        print(row.questions)
+    queryset_questions = queryset[0].questions.all()
+    filter = []
+    for row in queryset_questions:
+        filter.append(row.id_question)
+    print(filter)
+    queryset_answer = AnswerItem.objects.filter(question__in=filter)
+
     template_name = 'docker_app/reto.html'
 
-    return render(request, template_name, {'reto': queryset})
+    return render(request, template_name, {'reto': queryset, 'questions': queryset_questions,
+                                           'answers': queryset_answer})
 
