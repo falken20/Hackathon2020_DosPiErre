@@ -1,0 +1,103 @@
+.contenedor{
+	position:relative;
+	z-index:3;
+	top: 50%;
+	left: 10%;
+	display: none;
+}
+
+.barra {
+	background: #f7f7f7;		
+	display: inline-flex;
+	height: 30px;
+	border: 2.35px solid gray;
+	border-radius: 14px;
+	animation: letter 2s ease-in-out infinite alternate;
+}			
+
+@keyframes letter {
+	0%,30%{ width: 10%; }
+	70%,100%{ width: 80%; }
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+h1 {
+  text-align: center; 
+  color: #ffffff; 
+  font-family: 'Lato', sans-serif; 
+  font-size: 35px; 
+  font-weight: 300;  
+  margin: 0;
+}
+
+h2 { 
+  text-align: center; 
+  color: #adb7bd; 
+  font-family: 'Lucida Sans', Arial, sans-serif; 
+  font-size: 16px;
+}
+ 
+h3 { 
+  color: white; 
+  text-shadow: 1px 1px 0 DarkSlateGray;
+  font-family: 'Lucida Sans', Arial, sans-serif; 
+  font-size: 16px;
+ } 
+ 
+#camera, #camera--view, #camera--sensor, #camera--output, .imgback {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#camera--view, #camera--sensor, #camera--output{
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#camera--trigger, #login{
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 100px);
+}
+
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.imgback2 {
+    display: block;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 10px;
+}
+
+
+
+

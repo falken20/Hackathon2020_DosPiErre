@@ -1,0 +1,38 @@
+schemaVersion: 2.0.0
+metadata:
+  name: login
+  version: 1.0.0
+components:
+- name: py-web
+  container:
+    endpoints:
+    - exposure: public
+      path: /
+      name: frn
+      targetPort: 5000
+      protocol: https
+    image: registry.redhat.io/rhel8/python-38
+    mountSources: true
+commands:
+- exec:
+    commandLine: pip3 install requests flask-cors opencv-python-headless imutils scikit-learn scipy==1.4.1 tensorflow==2.2 keras
+    component: py-web
+    group:
+      isDefault: true
+      kind: build
+  id: pip-install-requirements
+- exec:
+    commandLine: python3 main.py
+    component: py-web
+    group:
+      isDefault: true
+      kind: run
+    workingDir: ${PROJECTS_ROOT}
+  id: run-app
+- exec:
+    commandLine: pip3 install --user debugpy && python -m debugpy --listen 0.0.0.0:${DEBUG_PORT} main.py
+    component: py-web
+    group:
+      kind: debug
+    workingDir: ${PROJECTS_ROOT}
+  id: debugpy
