@@ -526,6 +526,22 @@ h1{
   margin: 10px;
 }
 
+.map-wrapper .card{
+  width: 200px;
+}
+.map-wrapper .card .btn{
+  color: var(--bbva-white);
+  margin: auto;
+}
+.map-wrapper .card .card-img-top{
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  max-height: 130px;
+  width: auto;
+  margin: auto;
+  max-width: 190px;
+}
+
 .map-wrapper{
   width: 100%;
   height: 100%;

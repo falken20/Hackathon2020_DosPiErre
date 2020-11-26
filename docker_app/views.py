@@ -90,9 +90,8 @@ def generate_map(queryset):
         # HeatMap(location, radius=16).add_to(heat_map)
         for row in queryset:
             print([row.company.latitude, row.company.longitude])
-            html_card = f'<div class="card" style="width: 18rem;">' \
-                        f'<img src="{row.company.logo_url}" class="card-img-top" ' \
-                        f'style="max-height:100px; width: auto;>' \
+            html_card = f'<div class="card">' \
+                        f'<img src="{row.company.logo_url}" class="card-img-top">' \
                         f'<div class="card-body">' \
                         f'<h5 class="card-title">{row.company}</h5>' \
                         f'<p class="card-text">{row.desc_promotion}</p>' \
