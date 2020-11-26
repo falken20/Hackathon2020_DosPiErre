@@ -30,8 +30,8 @@
 
                 <form action="/ranking/" method="POST" class="form-inline"> {% csrf_token %}
                     <div class="form-group">
-                        <label for="author_id">Codigo Postal     </label>
-                        <select id="zip_code" name="zip_code" class="form-control" required onchange="this.form.submit()">
+                        <label for="zip_code" class="my-1 mr-2">Codigo Postal</label>
+                        <select id="zip_code" name="zip_code" class="custom-select my-1 mr-sm-2" required onchange="this.form.submit()">
                             <option value=""></option>
                           {% for element in zip_codes %}
                             <option value={{ element.zip_code }}>{{ element.zip_code }}</option>
@@ -46,7 +46,7 @@
                             <th>User</th>
                             <th>Points</th>
                             <th>Provincia</th>
-                            <th>Zip code</th>
+                            <th>Codigo Postal</th>
                         </tr>
                     </thead>
                     <tbody>

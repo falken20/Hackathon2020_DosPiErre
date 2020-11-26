@@ -31,21 +31,29 @@ def users_view(request):
 
 def ranking_view(request):
 
-    zip_code = ''
+    try:
+        z_code = ''
 
-    if request.POST:
-        zip_code = request.POST['zip_code']
+        if request.POST:
+            z_code = request.POST['zip_code']
 
-    if zip_code == '':
-        queryset = UserItem.objects.all().order_by('-points')
-    else:
-        queryset = UserItem.objects.all().filter(zip_code=zip_code).order_by('-points')
+        if z_code == '':
+            queryset = UserItem.objects.all().order_by('-points')
+        else:
+            queryset = UserItem.objects.all().filter(zip_code=z_code).order_by('-points')
 
-    q_zip_code = UserItem.objects.all().values('zip_code').order_by('zip_code')
+        print('ZIP CODE', z_code)
+        q_zip_code = UserItem.objects.all().values('zip_code').distinct().order_by('zip_code')
 
-    template_name = 'docker_app/ranking.html'
+        template_name = 'docker_app/ranking.html'
 
-    return render(request, template_name, {'ranking': queryset, 'zip_codes': q_zip_code})
+        return render(request, template_name, {'ranking': queryset, 'zip_codes': q_zip_code})
+
+    except Exception as err:
+        logging.error(f'\nLine: {err.__traceback__.tb_lineno} \n'
+                      f'File: {err.__traceback__.tb_frame.f_code.co_filename} \n'
+                      f'Type Error: {type(err).__name__} \n'
+                      f'Arguments:\n {err.args}')
 
 
 def ofertas_view(request):
