@@ -19,6 +19,18 @@
   <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}">
 
   <title>DosPiErre</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
 </head>
 
 <body>
@@ -26,7 +38,7 @@
   <header id="main-header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="title-wrapper layout horizontal justified center">
-        <div>
+        <div class="layout horizontal center">
           <img src="{% static 'django_docker/img/logo.png' %}" class="card-img" alt="DosPiErre"
           style="max-height:25px; width: auto; margin:0 auto; margin-right:10px">
         <a class="navbar-brand" href="/"> DosPiErre </a>

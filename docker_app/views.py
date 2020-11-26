@@ -84,8 +84,9 @@ def generate_map(queryset):
         print(f'Creando mapa para coordenadas')
         location_ini = [queryset[0].company.latitude, queryset[0].company.longitude]
         heat_map = folium.Map(location=location_ini,
-                              zoom_start='17')
-
+                              zoom_start='14')
+        # first, force map to render as HTML, for us to dissect
+        
         # HeatMap(location, radius=16).add_to(heat_map)
         for row in queryset:
             print([row.company.latitude, row.company.longitude])
@@ -101,6 +102,8 @@ def generate_map(queryset):
             folium.Marker([row.company.latitude, row.company.longitude],
                           popup=html_card,
                           tooltip='Click me').add_to(heat_map)
+
+        _ = heat_map._repr_html_()
 
     except Exception as err:
         logging.error(f'\nLine: {err.__traceback__.tb_lineno} \n'
@@ -118,7 +121,7 @@ def mapa_view(request):
 
     template_name = 'docker_app/mapa.html'
 
-    return render(request, template_name, {'users': queryset, 'map': heat_map._repr_html_()})
+    return render(request, template_name, {'users': queryset, 'map': heat_map.get_root()})
 
 
 def result_view(request):

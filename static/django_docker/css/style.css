@@ -487,6 +487,10 @@ body.fullbleed {
   }
 }
 
+body, html{
+  width: 100%;
+  height: 100%;
+}
 body {
 	padding-top: 60px; /* Relleno superior igual a la altura de la cabecera*/
 }
@@ -520,4 +524,15 @@ h1{
 
 .card{
   margin: 10px;
+}
+
+.map-wrapper{
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.folium-map{
+  width: 100%;
+  height: 100%;
 }

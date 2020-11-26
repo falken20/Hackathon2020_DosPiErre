@@ -4,9 +4,16 @@
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}">
+
 <!--<link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css">-->
+
 <body>
-    <div class="content-wrapper"> {{ map|safe }} </div>
+  <div class="map-wrapper">
+    {{map.html.render|safe}}
+  </div>
+  <script>
+    {{ map.script.render|safe }}
+  </script>
 </body>
 
 {% endblock content %}
