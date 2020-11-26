@@ -24,7 +24,7 @@ SECRET_KEY = 'hgvr2wxx74)l=!mtx((y3z*_w1kj&x%ken-e5gyd@u0)yd@g9t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dospierre-adm.apps.cluster-0fa9.0fa9.example.opentlc.com']
 
 # Application definition
 
