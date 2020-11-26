@@ -450,7 +450,7 @@ body.fullbleed {
 
 #main-header nav {
   background-color: var(--bbva-navy);
-  height: 70px;
+  min-height: 70px;
   padding: 0 25px;
 }
 
