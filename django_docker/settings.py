@@ -82,6 +82,14 @@ mongoengine.connect(db='db_name', host=MONGODB_HOST,
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+}
+
+""" TODO WHEN POSTGRESQL WORKS
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sampledb',
         'USER': os.getenv('POSTGRESQL_USER'),
@@ -90,6 +98,7 @@ DATABASES = {
         'PORT': os.getenv('POSTGRESQL_PORT', 5432)
     }
 }
+"""
 
 
 # Password validation
