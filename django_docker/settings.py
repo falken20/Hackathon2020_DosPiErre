@@ -24,7 +24,7 @@ SECRET_KEY = 'hgvr2wxx74)l=!mtx((y3z*_w1kj&x%ken-e5gyd@u0)yd@g9t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -79,26 +79,27 @@ mongoengine.connect(db='db_name', host=MONGODB_HOST,
                     read_preference=pymongo.ReadPreference.PRIMARY_PREFERRED)
 """
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-}
-
-""" TODO WHEN POSTGRESQL WORKS
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sampledb',
-        'USER': os.getenv('POSTGRESQL_USER'),
-        'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
-        'HOST': os.getenv('POSTGRESQL_HOST'),
-        'PORT': os.getenv('POSTGRESQL_PORT', 5432)
+is_local = not os.getenv('POSTGRESQL_USER')
+if is_local:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        },
     }
-}
-"""
+
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('POSTGRESQL_DATABASE'),
+            'USER': os.getenv('POSTGRESQL_USER'),
+            'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
+            'HOST': os.getenv('POSTGRESQL_HOST'),
+            'PORT': 5432
+        }
+    }
 
 
 # Password validation
