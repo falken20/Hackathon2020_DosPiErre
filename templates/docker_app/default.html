@@ -6,18 +6,18 @@
 <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}">
 
 <!-- Rotating card -->
-<div>
+<div class="col-12">
 
     <h1>Temática próximos desafios</h1>
 
 <div class="row">
   {% for element in topics %}
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card" style="margin-bottom:10px">
       <div class="card-body">
-        <h5 class="card-title">{{ element.title_topic }}</h5>
+        <h5 class="card-title" style="color:#1973b8;font-weight: bold">{{ element.title_topic }}</h5>
         <p class="card-text">{{ element.desc_topic }}</p>
-        <a href="{{ element.url_topic }}" class="btn btn-primary" target="_blank">Más info</a>
+        <a href="{{ element.url_topic }}" class="btn btn-primary" style="font-weight: bold;" target="_blank">Más info</a>
       </div>
     </div>
   </div>

@@ -5,17 +5,17 @@
 {% load static %}
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
 
-<div>
+<div class="col-12">
     <h1>Promociones</h1>
 
     {% for element in ofertas %}
 
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; margin-bottom:10px">
           <img src="{{ element.company.logo_url }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{ element.company }}</h5>
+          <div class="card-body cars">
+            <h5 class="card-title" style="color:#1973b8;font-weight: bold">{{ element.company }}</h5>
             <p class="card-text">{{ element.desc_promotion }}</p>
-            <a href="/reto/{{ element.reto.id_reto }}" class="btn btn-primary">Acepta el reto!!</a>
+            <a href="/reto/{{ element.reto.id_reto }}" class="btn btn-primary" style="font-weight: bold">Acepta el reto!!</a>
           </div>
         </div>
 

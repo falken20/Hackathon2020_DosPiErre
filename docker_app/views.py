@@ -57,29 +57,7 @@ def reto_view(request, id_reto='R001'):
                                            'answers': queryset_answer})
 
 
-def generate_map(location):
-    try:
-        print(f'Creando mapa para coordenadas:\n {location}')
-        heat_map = folium.Map(location=location[0],
-                              zoom_start='16')
-
-        # HeatMap(location, radius=16).add_to(heat_map)
-        for loc in location:
-            folium.Marker(loc,popup='<a href="">Hola</a>', tooltip='Click me').add_to(heat_map)
-
-        heat_map.save(f'{PATH_MAP}mapa2.html')
-
-        print('Heat map successfully generated in html')
-
-    except Exception as err:
-        logging.error(f'\nLocation: {location}'
-                      f'\nLine: {err.__traceback__.tb_lineno} \n'
-                      f'File: {err.__traceback__.tb_frame.f_code.co_filename} \n'
-                      f'Type Error: {type(err).__name__} \n'
-                      f'Arguments:\n {err.args}')
-
-
-def generate_map_q(queryset):
+def generate_map(queryset):
     try:
         print(f'Creando mapa para coordenadas')
         location_ini = [queryset[0].company.latitude, queryset[0].company.longitude]
@@ -88,6 +66,7 @@ def generate_map_q(queryset):
 
         # HeatMap(location, radius=16).add_to(heat_map)
         for row in queryset:
+            print([row.company.latitude, row.company.longitude])
             html_card = f'<div class="card" style="width: 18rem;">' \
                         f'<img src="{row.company.logo_url}" class="card-img-top" ' \
                         f'style="max-height:100px; width: auto;>' \
@@ -122,8 +101,12 @@ def mapa_view(request):
         else:
             location.append([row.company.latitude, row.company.longitude])
 
-    generate_map_q(queryset)
+    generate_map(queryset)
 
-    template_name = 'docker_app/mapa2.html'
+    template_name = 'docker_app/mapa.html'
 
     return render(request, template_name, {'users': queryset})
+
+
+def result_view(request):
+    pass
