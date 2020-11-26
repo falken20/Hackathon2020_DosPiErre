@@ -6,12 +6,46 @@
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
     <div class="content-wrapper col-12">
             <h1>Ranking</h1>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Premio mejor del mes de tu provincia</h5>
+                    <p class="card-text">Playstation 5</p>
+                    <a href="/ofertas" class="btn btn-primary">Ir a subir puntos!!</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Premio mejor del mes de tu Código Postal</h5>
+                    <p class="card-text">Vale 5€ de descuento en tu próxima comprar online</p>
+                    <a href="/ofertas" class="btn btn-primary">Ir a subir puntos!!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                <form action="/ranking/" method="POST" class="form-inline"> {% csrf_token %}
+                    <div class="form-group">
+                        <label for="author_id">Codigo Postal     </label>
+                        <select id="zip_code" name="zip_code" class="form-control" required onchange="this.form.submit()">
+                            <option value=""></option>
+                          {% for element in zip_codes %}
+                            <option value={{ element.zip_code }}>{{ element.zip_code }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                </form>
+
             <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>User</th>
                             <th>Points</th>
-                            <th>Ciudad</th>
+                            <th>Provincia</th>
                             <th>Zip code</th>
                         </tr>
                     </thead>
@@ -20,7 +54,7 @@
                         <tr style="font-size:smaller;">
                             <td> {{ element.user }} </td>
                             <td> {{ element.points }} </td>
-                            <td> {{ element.city }} </td>
+                            <td> {{ element.province }} </td>
                             <td> {{ element.zip_code }} </td>
                         </tr>
             

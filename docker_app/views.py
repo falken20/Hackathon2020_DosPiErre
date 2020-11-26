@@ -23,16 +23,29 @@ def default_view(request):
 
 def users_view(request):
     queryset = UserItem.objects.all()
+
     template_name = 'docker_app/users.html'
 
     return render(request, template_name, {'users': queryset})
 
 
 def ranking_view(request):
-    queryset = UserItem.objects.all().order_by('-points')
+
+    zip_code = ''
+
+    if request.POST:
+        zip_code = request.POST['zip_code']
+
+    if zip_code == '':
+        queryset = UserItem.objects.all().order_by('-points')
+    else:
+        queryset = UserItem.objects.all().filter(zip_code=zip_code).order_by('-points')
+
+    q_zip_code = UserItem.objects.all().values('zip_code').order_by('zip_code')
+
     template_name = 'docker_app/ranking.html'
 
-    return render(request, template_name, {'ranking': queryset})
+    return render(request, template_name, {'ranking': queryset, 'zip_codes': q_zip_code})
 
 
 def ofertas_view(request):
