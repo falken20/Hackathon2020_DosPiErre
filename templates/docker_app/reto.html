@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
+
+<div>
+    <h1>Reto</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Reto</th>
+                <th>Points 1º</th>
+                <th>Points 2º</th>
+                <th>Points 3º</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for element in reto %}
+
+            <tr style="font-size:smaller;">
+                <td> {{ element.desc_reto }} </td>
+                <td> {{ element.points_1 }} </td>
+                <td> {{ element.points_2 }} </td>
+                <td> {{ element.points_3 }} </td>
+                <td><a class="btn btn-primary btn-sm" href="/question/{{ element.questions.id_question }}" role="button">Link</a></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock content %}

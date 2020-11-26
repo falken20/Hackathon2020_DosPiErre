@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
+
+<div>
+    <h1>Promociones</h1>
+
+    {% for element in ofertas %}
+
+        <div class="card" style="width: 18rem;">
+          <img src="{{ element.company.logo_url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ element.company }}</h5>
+            <p class="card-text">{{ element.desc_promotion }}</p>
+            <a href="/reto/{{ element.reto.id_reto }}" class="btn btn-primary">Acepta el reto!!</a>
+          </div>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

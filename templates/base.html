@@ -21,8 +21,9 @@
     <!-- Barra de navegación -->
     <header id="main-header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-
-        <a class="navbar-brand" href="/">DosPiErre</a>
+        <img src="{% static 'django_docker/img/logo.png' %}" class="card-img" alt="DosPiErre"
+            style="max-height:25px; width: auto; margin:0 auto; margin-right:10px">
+        <a class="navbar-brand" href="/"> DosPiErre</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-falken-users" aria-controls="navbar-falken-users" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,27 +33,20 @@
           <ul class="navbar-nav mr-auto">
 
               <li class="nav-item">
-                <a class="nav-link" href="/cards">Mapa</a>
+                <a class="nav-link" href="/mapa">Mapa</a>
               </li>
 
 
               <li class="nav-item">
-                <a class="nav-link" href="/books">Ranking</a>
+                <a class="nav-link" href="/ranking">Ranking</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/todo">Tu BBVA</a>
+                <a class="nav-link" href="/ofertas">Promociones</a>
               </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="reports" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Admin
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/users">Teenagers</a>
-                  <a class="dropdown-item" href="/companies">Companies</a>
-                  <a class="dropdown-item" href="/promotions">Promotions</a>
-                </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin" target="_blank">Admin</a>
               </li>
 
           </ul>

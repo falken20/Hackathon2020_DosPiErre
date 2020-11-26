@@ -3,12 +3,26 @@
 {% block content %}
 
 {% load static %}
-<!-- <link rel="stylesheet" type="text/css" href="{% static 'english_dic/css/style.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}">
 
 <!-- Rotating card -->
 <div>
 
-    <h1>DosPiErre</h1>
+    <h1>Temática próximos desafios</h1>
+
+<div class="row">
+  {% for element in topics %}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ element.title_topic }}</h5>
+        <p class="card-text">{{ element.desc_topic }}</p>
+        <a href="{{ element.url_topic }}" class="btn btn-primary" target="_blank">Más info</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
 </div>
 <!-- Rotating card -->
