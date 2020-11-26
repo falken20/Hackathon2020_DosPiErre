@@ -7,29 +7,38 @@
 
 <div>
     <h1>Reto</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Reto</th>
-                <th>Points 1º</th>
-                <th>Points 2º</th>
-                <th>Points 3º</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for element in reto %}
+    {% for element in reto %}
+    <div class="card text-center">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ element.desc_reto }}</h5>
+        <p class="card-text">Puntos Todo Ok: {{ element.points_1 }}, Puntos 1 fallo: {{ element.points_2 }}, Puntos 2 fallo: {{ element.points_3 }}
+        </p>
+      </div>
+      <div class="card-footer text-muted">
+        ¡ Suerte !
+      </div>
+    </div>
+     {% for ele_question in element.questions.all %}
 
-            <tr style="font-size:smaller;">
-                <td> {{ element.desc_reto }} </td>
-                <td> {{ element.points_1 }} </td>
-                <td> {{ element.points_2 }} </td>
-                <td> {{ element.points_3 }} </td>
-                <td><a class="btn btn-primary btn-sm" href="/question/{{ element.questions.id_question }}" role="button">Link</a></td>
-            </tr>
+        <ul class="list-group">
+          <li class="list-group-item active">{{ ele_question.desc_question }}</li>
+            {% for ele_answer in answers %}
+                {% if ele_question.id_question == ele_answer.question.id_question %}
+                    <li class="list-group-item"><input type="radio" id="{{ele_answer.id_answer}}"
+                                                       name="{{ele_question.id_question}}"
+                                                       value="male">  {{ele_answer.desc_answer}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
 
-        {% endfor %}
-        </tbody>
-    </table>
+     {% endfor %}
+   {% endfor %}
+
+<button type="button" class="btn btn-warning btn-lg btn-block">Validar</button>
+
+
 
 </div>
 

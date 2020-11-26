@@ -4,12 +4,9 @@
     <list default="true" id="8738c62b-a3fd-4a12-aaf8-2ca8a3815b2e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/docker_app/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/docker_app/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/ofertas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/docker_app/reto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/docker_app/reto.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,5 +52,9 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1398" y="359" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1606337666753" />
+    <state x="1588" y="331" width="670" height="676" key="search.everywhere.popup" timestamp="1606372788825">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1588" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1606372788825" />
   </component>
 </project>
