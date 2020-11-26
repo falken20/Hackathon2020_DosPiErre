@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}">
 <!--<link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css">-->
 <body>
-    {% include "docker_app/mapa2.html" %}
+    <div> {{ map|safe }} </div>
 </body>
 
 {% endblock content %}

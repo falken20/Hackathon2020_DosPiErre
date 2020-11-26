@@ -80,33 +80,26 @@ def generate_map(queryset):
                           popup=html_card,
                           tooltip='Click me').add_to(heat_map)
 
-        heat_map.save(f'{PATH_MAP}mapa2.html')
-
-        print('Heat map successfully generated in html')
-
     except Exception as err:
         logging.error(f'\nLine: {err.__traceback__.tb_lineno} \n'
                       f'File: {err.__traceback__.tb_frame.f_code.co_filename} \n'
                       f'Type Error: {type(err).__name__} \n'
                       f'Arguments:\n {err.args}')
+    
+    return heat_map
 
 
 def mapa_view(request):
     queryset = PromotionItem.objects.all()
 
-    location = []
-    for row in queryset:
-        if int(row.company.latitude) == 0 and int(row.company.longitude) == 0:
-            pass
-        else:
-            location.append([row.company.latitude, row.company.longitude])
-
-    generate_map(queryset)
+    heat_map = generate_map(queryset)
 
     template_name = 'docker_app/mapa.html'
 
-    return render(request, template_name, {'users': queryset})
+    return render(request, template_name, {'users': queryset, 'map': heat_map._repr_html_()})
 
 
 def result_view(request):
-    pass
+    template_name = 'docker_app/result.html'
+
+    return render(request, template_name)
