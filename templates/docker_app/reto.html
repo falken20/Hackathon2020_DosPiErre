@@ -5,7 +5,7 @@
 {% load static %}
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'django_docker/css/style.css' %}"> -->
 
-<div>
+<div class="col-12">
     <h1>Reto</h1>
     {% for element in reto %}
     <div class="card text-center">
@@ -13,7 +13,12 @@
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ element.desc_reto }}</h5>
-        <p class="card-text">Puntos Todo Ok: {{ element.points_1 }}, Puntos 1 fallo: {{ element.points_2 }}, Puntos 2 fallo: {{ element.points_3 }}
+        <p class="card-text">
+          <ul>
+            <li>Puntos Todo Ok: {{ element.points_1 }}</li>
+            <li>Puntos 1 fallo: {{ element.points_2 }}</li>
+            <li>Puntos 2 fallo: {{ element.points_3 }}</li>
+          </ul> 
         </p>
       </div>
       <div class="card-footer text-muted">
@@ -28,15 +33,16 @@
                 {% if ele_question.id_question == ele_answer.question.id_question %}
                     <li class="list-group-item"><input type="radio" id="{{ele_answer.id_answer}}"
                                                        name="{{ele_question.id_question}}"
-                                                       value="male">  {{ele_answer.desc_answer}}</li>
+                                                       value="male"> {{ele_answer.desc_answer}}</li>
                 {% endif %}
             {% endfor %}
         </ul>
 
      {% endfor %}
    {% endfor %}
-
-<button type="button" class="btn btn-warning btn-lg btn-block">Validar</button>
+<div class="mt-5">  
+  <button type="button" class="w-30 btn btn-success btn-lg btn-block">Validar</button>
+</div>
 
 
 

@@ -9,3 +9,21 @@ div.olMapViewport {
     text-align: left;
     position: absolute !important;
 }
+.list-group-item.active{
+	background-color: #004481 !important;
+}
+.table thead th{
+	text-transform: uppercase;
+	background-color: #004481;
+	color:#fff;
+	font-size: 15px;
+}
+.text-muted{
+	color:#1973b8 !important;
+	font-weight: bold;
+}
+h1{
+	color: #121212 !important;
+	font-family: sans-serif !important;
+
+}
